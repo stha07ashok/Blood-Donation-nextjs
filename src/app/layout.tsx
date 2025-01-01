@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Donate Blood",
+  title: "Donate Blood | Nepal Blood Bank",
   description: "donate blood save life",
 };
 

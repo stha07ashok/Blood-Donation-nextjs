@@ -38,6 +38,9 @@ const RegisterPage = () => {
                 className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
                 placeholder="Enter your email"
               />
+              {errors.email && (
+                <span className="text-red-600 ">This field is required!!!</span>
+              )}
             </div>
             <div>
               <label htmlFor="password" className="block font-medium">
@@ -50,6 +53,9 @@ const RegisterPage = () => {
                 className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
                 placeholder="Enter your password"
               />
+              {errors.password && (
+                <span className="text-red-600 ">This field is required!!!</span>
+              )}
             </div>
             <div>
               <label htmlFor="password" className="block font-medium">
@@ -64,6 +70,9 @@ const RegisterPage = () => {
                 className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
                 placeholder="Enter your contact number"
               />
+              {errors.contactNumber && (
+                <span className="text-red-600 ">This field is required!!!</span>
+              )}
             </div>
             <div>
               <label htmlFor="password" className="block font-medium">
@@ -76,6 +85,9 @@ const RegisterPage = () => {
                 className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
                 placeholder="Enter your address"
               />
+              {errors.address && (
+                <span className="text-red-600 ">This field is required!!!</span>
+              )}
             </div>
             <div>
               <label htmlFor="password" className="block font-medium">
@@ -90,6 +102,9 @@ const RegisterPage = () => {
                 className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
                 placeholder="Enter your nearest blood bank branch"
               />
+              {errors.bloodBankBranch && (
+                <span className="text-red-600 ">This field is required!!!</span>
+              )}
             </div>
             <button
               type="submit"

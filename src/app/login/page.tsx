@@ -53,7 +53,7 @@ const LoginPage = () => {
                 className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
                 placeholder="Enter your password"
               />
-              {errors.email && (
+              {errors.password && (
                 <span className="text-red-600 ">This field is required!!!</span>
               )}
             </div>

@@ -4,33 +4,18 @@ import Select from "react-select";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 
 const selectBloodBankBranch = [
-  {
-    value: "Nepal Blood Bank | Kathmandu",
-    label: "Nepal Blood Bank | Kathmandu",
-  },
-  { value: "Nepal Blood Bank | Pokhara", label: "Nepal Blood Bank | Pokhara" },
-  { value: "Nepal Blood Bank | Butwal", label: "Nepal Blood Bank | Butwal" },
-  { value: "Nepal Blood Bank | Chitwan", label: "Nepal Blood Bank | Chitwan" },
-  { value: "Nepal Blood Bank | Dharan", label: "Nepal Blood Bank | Dharan" },
-  {
-    value: "Nepal Blood Bank | Biratnagar",
-    label: "Nepal Blood Bank | Biratnagar",
-  },
-  {
-    value: "Nepal Blood Bank | Nepalgunj",
-    label: "Nepal Blood Bank | Nepalgunj",
-  },
-  {
-    value: "Nepal Blood Bank | Dhangadi",
-    label: "Nepal Blood Bank | Dhangadi",
-  },
-  { value: "Nepal Blood Bank | Surkhet", label: "Nepal Blood Bank | Surkhet" },
-  {
-    value: "Nepal Blood Bank | Janakpur",
-    label: "Nepal Blood Bank | Janakpur",
-  },
-  { value: "Nepal Blood Bank | Dang", label: "Nepal Blood Bank | Dang" },
-  { value: "Nepal Blood Bank | Hetauda", label: "Nepal Blood Bank | Hetauda" },
+  { value: " Kathmandu", label: "Nepal Blood Bank | Kathmandu" },
+  { value: "Pokhara", label: "Nepal Blood Bank | Pokhara" },
+  { value: "Butwal", label: "Nepal Blood Bank | Butwal" },
+  { value: "Chitwan", label: "Nepal Blood Bank | Chitwan" },
+  { value: "Dharan", label: "Nepal Blood Bank | Dharan" },
+  { value: "Biratnagar", label: "Nepal Blood Bank | Biratnagar" },
+  { value: "Nepalgunj", label: "Nepal Blood Bank | Nepalgunj" },
+  { value: " Dhangadi", label: "Nepal Blood Bank | Dhangadi" },
+  { value: "Surkhet", label: "Nepal Blood Bank | Surkhet" },
+  { value: "Janakpur", label: "Nepal Blood Bank | Janakpur" },
+  { value: " Dang", label: "Nepal Blood Bank | Dang" },
+  { value: "Hetauda", label: "Nepal Blood Bank | Hetauda" },
 ];
 
 interface RegisterFormData {

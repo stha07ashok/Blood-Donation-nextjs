@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import Link from "next/link";
 
 const selectBloodBankBranch = [
   { value: " Kathmandu", label: "Nepal Blood Bank | Kathmandu" },
@@ -18,12 +19,18 @@ const selectBloodBankBranch = [
   { value: "Hetauda", label: "Nepal Blood Bank | Hetauda" },
 ];
 
+const genderOptions = [
+  { value: "male", label: "Male" },
+  { value: "female", label: "Female" },
+];
+
 interface RegisterFormData {
   email: string;
   password: string;
   contactNumber: number;
   address: string;
   bloodBankBranch: { value: string; label: string };
+  gender: boolean;
 }
 
 const RegisterPage = () => {
@@ -158,6 +165,35 @@ const RegisterPage = () => {
               <span className="text-red-600">This field is required!!!</span>
             )}
           </div>
+          {/* Gender Radio Buttons */}
+          <div>
+            <label className="block font-medium">Gender:</label>
+            <div className="flex items-center space-x-4">
+              <div>
+                <input
+                  type="radio"
+                  id="male"
+                  value="male"
+                  {...register("gender", { required: "Gender is required" })}
+                  className="mr-2"
+                />
+                <label htmlFor="male">Male</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="female"
+                  value="female"
+                  {...register("gender", { required: "Gender is required" })}
+                  className="mr-2"
+                />
+                <label htmlFor="female">Female</label>
+              </div>
+            </div>
+            {errors.gender && (
+              <span className="text-red-600">{errors.gender.message}</span>
+            )}
+          </div>
           {/* Submit Button */}
           <button
             type="submit"
@@ -166,6 +202,12 @@ const RegisterPage = () => {
             Register
           </button>
         </form>
+        <p className="align-baseline font-medium mt-4 text-sm">
+          Have an account? Please{" "}
+          <Link href="/login" className="text-violet-800 hover:text-violet-600">
+            Login
+          </Link>
+        </p>
       </div>
     </div>
   );

@@ -39,7 +39,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="border-b border-2 border-b-violet-500 h-20 shadow-md ">
+    <nav className="border-b border-2 border-b-violet-500 h-25 shadow-md ">
       <div className="container mx-auto flex justify-between gap-4 h-fit">
         {/* Logo/Photo */}
         <Link href="/" className="hover">

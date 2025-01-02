@@ -3,6 +3,22 @@ import Link from "next/link";
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
+const selectBloodBankBranch = [
+  "Choose a Blood Bank Branch",
+  "Nepal Blood Bank | Kathmandu",
+  "Nepal Blood Bank | Pokhara",
+  "Nepal Blood Bank | Butwal",
+  "Nepal Blood Bank | Chitwan",
+  "Nepal Blood Bank | Dharan",
+  "Nepal Blood Bank | Biratnagar",
+  "Nepal Blood Bank | Nepalgunj",
+  "Nepal Blood Bank | Dhangadi",
+  "Nepal Blood Bank | Surkhet",
+  "Nepal Blood Bank | Janakpur",
+  "Nepal Blood Bank | Dang",
+  "Nepal Blood Bank | Hetauda",
+];
+
 interface registerFormData {
   email: string;
   password: string;
@@ -93,15 +109,22 @@ const RegisterPage = () => {
               <label htmlFor="password" className="block font-medium">
                 Your nearest blood bank branch:
               </label>
-              <input
+              <select
                 {...register("bloodBankBranch", {
-                  required: "Blood bank is reauired",
+                  required: "Blood bank branch is required",
                 })}
-                type="text"
-                id="branch"
+                id="bloodBankBranch"
                 className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
-                placeholder="Enter your nearest blood bank branch"
-              />
+              >
+                <option value="" disabled>
+                  Choose a Blood Bank Branch
+                </option>
+                {selectBloodBankBranch.map((branch, index) => (
+                  <option key={index} value={branch}>
+                    {branch}
+                  </option>
+                ))}
+              </select>
               {errors.bloodBankBranch && (
                 <span className="text-red-600 ">This field is required!!!</span>
               )}

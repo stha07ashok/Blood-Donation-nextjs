@@ -132,7 +132,7 @@ const RegisterPage = () => {
                     {...field}
                     options={selectBloodBankBranch}
                     placeholder="Choose a Blood Bank Branch"
-                    className="react-select-container"
+                    className="react-select-container "
                     classNamePrefix="react-select"
                     onChange={(selectedOption) => {
                       field.onChange(selectedOption); // Pass the entire selected option object
@@ -144,6 +144,12 @@ const RegisterPage = () => {
                           )
                         : null
                     } // Ensure the selected value is passed back to the Select component
+                    styles={{
+                      control: (base) => ({
+                        ...base,
+                        borderColor: "rgb(128, 0, 255)", // Custom border color
+                      }),
+                    }}
                   />
                 )}
               />

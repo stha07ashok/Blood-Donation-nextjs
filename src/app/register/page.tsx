@@ -1,7 +1,24 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+interface registerFormData {
+  email: string;
+  password: string;
+  contactNumber: number;
+  address: string;
+  bloodBankBranch: string;
+}
 
 const RegisterPage = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<registerFormData>();
+  const onSubmit: SubmitHandler<registerFormData> = (data) => console.log(data);
   return (
     <div className="pageSize flex items-center justify-center">
       <div className="w-full max-w-md border border-violet-800 shadow-lg p-8 rounded-md ">
@@ -9,15 +26,16 @@ const RegisterPage = () => {
           Please Register!!!
         </p>
         <div>
-          <form className="space-y-4">
+          <form className="space-y-4 " onSubmit={handleSubmit(onSubmit)}>
             <div>
               <label htmlFor="email" className="block font-medium">
                 Email:
               </label>
               <input
+                {...register("email", { required: "Email is reauired" })}
                 type="email"
                 id="email"
-                className="w-full border border-gray-300 rounded-md p-2"
+                className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
                 placeholder="Enter your email"
               />
             </div>
@@ -26,9 +44,10 @@ const RegisterPage = () => {
                 Password:
               </label>
               <input
+                {...register("password", { required: "Password is reauired" })}
                 type="password"
                 id="password"
-                className="w-full border border-gray-300 rounded-md p-2"
+                className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
                 placeholder="Enter your password"
               />
             </div>
@@ -37,9 +56,12 @@ const RegisterPage = () => {
                 Contact Number:
               </label>
               <input
+                {...register("contactNumber", {
+                  required: "Contact number is reauired",
+                })}
                 type="number"
                 id="contact number"
-                className="w-full border border-gray-300 rounded-md p-2"
+                className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
                 placeholder="Enter your contact number"
               />
             </div>
@@ -48,9 +70,10 @@ const RegisterPage = () => {
                 Address:
               </label>
               <input
+                {...register("address", { required: "Address is reauired" })}
                 type="address"
                 id="address"
-                className="w-full border border-gray-300 rounded-md p-2"
+                className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
                 placeholder="Enter your address"
               />
             </div>
@@ -59,9 +82,12 @@ const RegisterPage = () => {
                 Your nearest blood bank branch:
               </label>
               <input
+                {...register("bloodBankBranch", {
+                  required: "Blood bank is reauired",
+                })}
                 type="text"
                 id="branch"
-                className="w-full border border-gray-300 rounded-md p-2"
+                className="w-full border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
                 placeholder="Enter your nearest blood bank branch"
               />
             </div>

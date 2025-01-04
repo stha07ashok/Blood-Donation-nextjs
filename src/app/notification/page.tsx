@@ -15,7 +15,7 @@ interface notificationType {
   time?: number | string;
 }
 
-const notificationData: notificationType[] = [
+export const notificationData: notificationType[] = [
   {
     title: "Blood Request!!",
     description:
@@ -24,10 +24,10 @@ const notificationData: notificationType[] = [
     patientName: "ABC XYZ",
     contactNumber: 9834568739,
     hospitalName: "Gandaki Hospital",
-    address: " Prithivi Chowk",
+    address: "Prithivi Chowk",
     date: "2025-06-01",
     requestStatus: "Urgent!!!",
-    Note: "Pleaes help us to save a life if you are available near this place!!!",
+    Note: "Please help us to save a life if you are available near this place!!!",
   },
   {
     title: "Blood Request!!",
@@ -40,7 +40,7 @@ const notificationData: notificationType[] = [
     address: "Manipal Pokhara",
     date: "2025-09-04",
     requestStatus: "Urgent!!!",
-    Note: "Pleaes help us to save a life if you are available near this place!!!",
+    Note: "Please help us to save a life if you are available near this place!!!",
   },
 ];
 
@@ -48,8 +48,8 @@ const donationCampData: notificationType[] = [
   {
     title: "Blood Donation Camp!!!",
     description:
-      "We are organizing a blood donation camp at following details. Please donate blood if you are available. ",
-    address: "WRC College Lamachaur,Pokhara",
+      "We are organizing a blood donation camp at following details. Please donate blood if you are available.",
+    address: "WRC College Lamachaur, Pokhara",
     date: "2025-08-17",
     day: "Sunday",
     time: "10:00 AM - 4:00 PM",
@@ -57,8 +57,8 @@ const donationCampData: notificationType[] = [
   {
     title: "Blood Donation Camp!!!",
     description:
-      "We are organizing a blood donation camp at following details. Please donate blood if you are available. ",
-    address: "Lakeside,Pokhara",
+      "We are organizing a blood donation camp at following details. Please donate blood if you are available.",
+    address: "Lakeside, Pokhara",
     date: "2025-03-12",
     day: "Sunday",
     time: "10:00 AM - 4:00 PM",
@@ -67,95 +67,93 @@ const donationCampData: notificationType[] = [
 
 const NotificationPage = () => {
   return (
-    <div className="min-h-screen max-w-screen-2xl mx-auto px-4 py-6 flex flex-col space-y-4">
-      <div className="flex flex-col space-y-4">
-        {notificationData.map((item, index) => (
-          <div
-            key={index}
-            className="py-4 border-2 border-violet-800 shadow-lg rounded-md "
-          >
-            <div className="flex flex-col">
-              <p className="text-2xl font-extrabold text-center ">
-                {item?.title}
-              </p>
-              <div className="flex flex-row  justify-between px-6 py-4">
-                <p className="font-bold text-red-600 ">{item.requestStatus}</p>
-                <p className="font-bold text-red-600 ">{item.requestStatus}</p>
-                <p className="font-bold text-red-600 ">{item.requestStatus}</p>
-              </div>
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-screen-xl mx-auto px-4 py-6">
+        <h1 className="text-2xl md:text-4xl font-bold text-center text-violet-700 mb-6">
+          Notifications
+        </h1>
 
-              <p className="font-light text-xl text-center">
-                {item.description}
-              </p>
-              <div className="flex flex-col justify-center">
-                <div className="flex flex-row gap-16 justify-center">
-                  <div className="flex flex-row ">
-                    <span className="font-light text-xl">
-                      Required Blood Type:{" "}
-                    </span>
-                    <p className="font-light text-xl">
-                      {" "}
-                      {item.requiredBloodType}
-                    </p>
-                  </div>
-                  <div className="flex flex-row ">
-                    <span className="font-light text-xl">Patient Name: </span>
-                    <p className="font-light text-xl"> {item.patientName}</p>
-                  </div>
-                </div>
-
-                <div className="flex flex-row gap-16 justify-center">
-                  <div className="flex flex-row pl-9">
-                    <span className="font-light text-xl">Contact Number: </span>
-                    <p className="font-light text-xl"> {item.contactNumber}</p>
-                  </div>
-                  <div className="flex flex-row ">
-                    <span className="font-light text-xl">Hospital Name: </span>
-                    <p className="font-light text-xl"> {item.hospitalName}</p>
-                  </div>
-                </div>
-
-                <div className="flex flex-row gap-16 justify-center">
-                  <div className="flex flex-row ">
-                    <span className="font-light text-xl">Address: </span>
-                    <p className="font-light text-xl"> {item.address}</p>
-                  </div>
-                  <div className="flex flex-row pr-14">
-                    <span className="font-light text-xl">Date: </span>
-                    <p className="font-light text-xl"> {item.date}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-row justify-center">
-                <span className="font-bold text-xl  text-red-600">Note: </span>
-                <p className="font-bold  text-xl text-red-600"> {item.Note}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="flex flex-col space-y-4">
-        {donationCampData.map((item, index) => (
-          <div
-            key={index}
-            className="py-4 border-2 border-violet-800 shadow-lg rounded-md"
-          >
-            <div className=" flex flex-col">
-              <p className="font-extrabold text-xl text-center ">
+        {/* Blood Requests Section */}
+        <section className="space-y-6">
+          {notificationData.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white border border-violet-500 shadow-lg rounded-lg p-4 md:p-6 flex flex-col"
+            >
+              <h2 className="text-xl md:text-2xl font-bold text-center text-violet-800">
                 {item.title}
-              </p>
-
-              <p className="font-light text-xl text-center">
+              </h2>
+              <p className="text-center text-gray-700 text-sm md:text-base">
                 {item.description}
               </p>
-              <p className="font-light text-xl text-center"> {item.address}</p>
-              <p className="font-light text-xl text-center">{item.date}</p>
-              <p className="font-light text-xl text-center">{item.day}</p>
-              <p className="font-light text-xl text-center">{item.time}</p>
+              <div className="flex flex-wrap justify-between gap-4 mt-4">
+                <p className="text-sm md:text-base flex-1">
+                  <span className="font-semibold">Required Blood Type:</span>
+                  <br /> {item.requiredBloodType}
+                </p>
+                <p className="text-sm md:text-base flex-1">
+                  <span className="font-semibold">Patient Name:</span>
+                  <br /> {item.patientName}
+                </p>
+                <p className="text-sm md:text-base flex-1">
+                  <span className="font-semibold">Contact Number:</span>
+                  <br /> {item.contactNumber}
+                </p>
+                <p className="text-sm md:text-base flex-1">
+                  <span className="font-semibold">Hospital Name:</span>
+                  <br /> {item.hospitalName}
+                </p>
+                <p className="text-sm md:text-base flex-1">
+                  <span className="font-semibold">Address:</span> <br />
+                  {item.address}
+                </p>
+                <p className="text-sm md:text-base flex-1">
+                  <span className="font-semibold">Date:</span> <br />
+                  {item.date}
+                </p>
+              </div>
+              <p className="text-center mt-4 text-red-600 text-sm md:text-base">
+                <span className="font-bold">Note:</span>
+                {item.Note}
+              </p>
             </div>
-          </div>
-        ))}
+          ))}
+        </section>
+
+        {/* Donation Camps Section */}
+        <section className="space-y-6 mt-8">
+          {donationCampData.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white border border-violet-500 shadow-lg rounded-lg p-4 md:p-6 flex flex-col"
+            >
+              <h2 className="text-xl md:text-2xl font-bold text-center text-violet-800">
+                {item.title}
+              </h2>
+              <p className="text-center text-gray-700 text-sm md:text-base">
+                {item.description}
+              </p>
+              <div className="flex flex-wrap justify-between gap-4 mt-4">
+                <p className="text-sm md:text-base flex-1">
+                  <span className="font-semibold">Address:</span> <br />
+                  {item.address}
+                </p>
+                <p className="text-sm md:text-base flex-1">
+                  <span className="font-semibold">Date:</span> <br />
+                  {item.date}
+                </p>
+                <p className="text-sm md:text-base flex-1">
+                  <span className="font-semibold">Day:</span>
+                  <br /> {item.day}
+                </p>
+                <p className="text-sm md:text-base flex-1">
+                  <span className="font-semibold">Time:</span> <br />
+                  {item.time}
+                </p>
+              </div>
+            </div>
+          ))}
+        </section>
       </div>
     </div>
   );

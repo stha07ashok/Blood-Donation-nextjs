@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { GrNotification } from "react-icons/gr";
-import { LuShoppingCart } from "react-icons/lu";
 import { usePathname } from "next/navigation";
 
 // Path to the image in the public folder
@@ -18,11 +17,6 @@ export const navbarData = [
 ];
 
 export const Data = [
-  {
-    title: "Cart",
-    href: "/cart",
-    icon: <LuShoppingCart className="text-2xl" />,
-  },
   {
     title: "Notification",
     href: "/notification",

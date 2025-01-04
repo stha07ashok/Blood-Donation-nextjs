@@ -88,7 +88,7 @@ const BloodAvailable = () => {
                 <Link
                   href="/placeorder"
                   type="button"
-                  className="py-2  px-10 text-black font-semibold rounded-md hover:bg-violet-600 border-2 border-violet-800 hover:text-white hoverEffect"
+                  className="py-2  px-16 text-black font-semibold rounded-md hover:bg-violet-600 border-2 border-violet-800 hover:text-white hoverEffect"
                 >
                   Place Order
                 </Link>

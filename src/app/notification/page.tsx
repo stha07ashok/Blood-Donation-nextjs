@@ -69,20 +69,26 @@ const NotificationPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-screen-xl mx-auto px-4 py-6">
-        <h1 className="text-2xl md:text-4xl font-bold text-center text-violet-700 mb-6">
-          Notifications
-        </h1>
-
-        {/* Blood Requests Section */}
         <section className="space-y-6">
           {notificationData.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-violet-500 shadow-lg rounded-lg p-4 md:p-6 flex flex-col"
+              className=" border border-violet-500 shadow-lg rounded-lg p-4 md:p-6 flex flex-col group"
             >
               <h2 className="text-xl md:text-2xl font-bold text-center text-violet-800">
                 {item.title}
               </h2>
+              <div className=" flex flex-row justify-between ">
+                <p className="font-bold text-xl text-red-600">
+                  {item.requestStatus}
+                </p>
+                <p className="font-bold text-xl text-red-600">
+                  {item.requestStatus}
+                </p>
+                <p className="font-bold text-xl text-red-600">
+                  {item.requestStatus}
+                </p>
+              </div>
               <p className="text-center text-gray-700 text-sm md:text-base">
                 {item.description}
               </p>
@@ -120,12 +126,11 @@ const NotificationPage = () => {
           ))}
         </section>
 
-        {/* Donation Camps Section */}
         <section className="space-y-6 mt-8">
           {donationCampData.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-violet-500 shadow-lg rounded-lg p-4 md:p-6 flex flex-col"
+              className=" border border-violet-500 shadow-lg rounded-lg p-4 md:p-6 flex flex-col group"
             >
               <h2 className="text-xl md:text-2xl font-bold text-center text-violet-800">
                 {item.title}

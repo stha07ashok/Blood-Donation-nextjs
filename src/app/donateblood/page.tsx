@@ -32,6 +32,8 @@ interface RegisterFormData {
   bloodBankBranch: { value: string; label: string };
   fullName: string;
   gender: boolean;
+  date: number;
+  time: number;
 }
 
 const RegisterPage = () => {
@@ -183,6 +185,34 @@ const RegisterPage = () => {
             {errors.bloodBankBranch && (
               <span className="text-red-600">This field is required!!!</span>
             )}
+          </div>
+          <div className="flex flex-row gap-6 w-full">
+            <div>
+              <label htmlFor="Date&Time" className="block font-medium">
+                Date:
+              </label>
+              <input
+                type="date"
+                id="Date"
+                {...register("date", {
+                  required: "Date is required",
+                })}
+                className="w-44 border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
+              />
+            </div>
+            <div>
+              <label htmlFor="Date&Time" className="block font-medium">
+                Time:
+              </label>
+              <input
+                type="time"
+                id="time"
+                {...register("time", {
+                  required: "Time is required",
+                })}
+                className="w-44 border border-violet-800 rounded-md p-2 text-lg shadow appearance-none leading-tight focus:outline-none focus:shadow"
+              />
+            </div>
           </div>
           {/* Gender Radio Buttons */}
           <div>

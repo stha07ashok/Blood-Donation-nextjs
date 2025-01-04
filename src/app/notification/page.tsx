@@ -64,16 +64,16 @@ const NotificationPage = () => {
             className="flex justify-center gap-8 border-2 border-violet-800 shadow-lg rounded-md bg-red-100"
           >
             <div>
-              <p className="text-2xl font-bold py-3 ">{item.title}</p>
+              <p className="text-2xl font-bold py-3 ">{item?.title}</p>
               <div className="flex flex-row justify-between max-w-screen-lg bg-red-700">
                 <p className="text-xl font-semibold py-2">
-                  {item.requestStatus}
+                  {item?.requestStatus}
                 </p>
                 <p className="text-xl font-semibold py-2">
-                  {item.requestStatus}
+                  {item?.requestStatus}
                 </p>
                 <p className="text-xl font-semibold py-2">
-                  {item.requestStatus}
+                  {item?.requestStatus}
                 </p>
               </div>
             </div>

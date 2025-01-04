@@ -246,7 +246,7 @@ const RegisterPage = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full border-2 border-violet-800 text-black py-2 rounded-md hover:bg-violet-700 hover:text-white transition ease-in-out duration-200"
+            className="w-full border-2 border-violet-800 text-black py-2 rounded-md hover:bg-violet-700 hover:text-white transition ease-in-out duration-200 hoverEffect"
           >
             Donate
           </button>

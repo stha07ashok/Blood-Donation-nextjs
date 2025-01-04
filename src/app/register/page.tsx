@@ -204,7 +204,10 @@ const RegisterPage = () => {
         </form>
         <p className="align-baseline font-medium mt-4 text-sm">
           Have an account? Please{" "}
-          <Link href="/login" className="text-violet-800 hover:text-violet-600">
+          <Link
+            href="/login"
+            className="text-violet-800 hover:text-violet-600 hoverEffect"
+          >
             Login
           </Link>
         </p>

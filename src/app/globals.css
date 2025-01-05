@@ -16,16 +16,18 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  body {
+    color: var(--foreground);
+    background: var(--background);
 
-  font-family: "Ubuntu", serif;
-}
+    font-family: "Ubuntu", serif;
+  }
 
-.hoverEffect {
-  @apply transition-all duration-300 cursor-pointer ease-in-out;
-}
+  .hoverEffect {
+    @apply transition-all duration-300 cursor-pointer ease-in-out;
+  }
 
-.pageSize {
-  @apply min-h-screen max-w-screen-2xl px-4 py-6 mx-auto; /*for first div container*/
+  .pageSize {
+    @apply min-h-screen max-w-screen-2xl px-4 py-6 mx-auto; /*for first div container*/
+  }
 }

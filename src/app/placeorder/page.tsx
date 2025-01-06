@@ -2,47 +2,36 @@
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-
-interface placeOrderData {
-  email: string;
-  address: string;
-  bloodtype: string;
-  contactNumber: number;
-  delivery?: string;
-}
-
-const bloodType = [
-  { value: "A+", label: "A+", price: 500 },
-  { value: "A-", label: "A-", price: 520 },
-  { value: "B+", label: "B+", price: 530 },
-  { value: "B-", label: "B-", price: 550 },
-  { value: "O+", label: "O+", price: 600 },
-  { value: "O-", label: "O-", price: 620 },
-  { value: "AB+", label: "AB+", price: 700 },
-  { value: "AB-", label: "AB-", price: 750 },
-];
+import { placeOrderDataProps } from "@/types/placeOrder";
+import { bloodType } from "@/store/bloodType";
 
 const deliveryCharge = 50;
 
-const PlaceOrder = () => {
+const PlaceOrder = ({
+  email,
+  address,
+  bloodtype,
+  contactNumber,
+  delivery,
+}: placeOrderDataProps) => {
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
     watch,
-  } = useForm<placeOrderData>();
+  } = useForm<placeOrderDataProps>();
 
   const [isClient, setIsClient] = useState(false);
   const [selectedBloodType, setSelectedBloodType] = useState<any | null>(null);
 
-  const delivery = watch("delivery");
+  const deliveryOption = watch("delivery");
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const onSubmit: SubmitHandler<placeOrderData> = (data) => {
+  const onSubmit: SubmitHandler<placeOrderDataProps> = (data) => {
     const bloodPrice = selectedBloodType?.price || 0;
     const totalPrice =
       bloodPrice + (data.delivery === "yes" ? deliveryCharge : 0);
@@ -50,11 +39,12 @@ const PlaceOrder = () => {
   };
 
   const totalPrice =
-    (selectedBloodType?.price || 0) + (delivery === "yes" ? deliveryCharge : 0);
+    (selectedBloodType?.price || 0) +
+    (deliveryOption === "yes" ? deliveryCharge : 0);
 
   return (
     <div className="min-h-screen max-w-screen-2xl mx-auto px-5 py-6 flex items-center justify-center">
-      <div className="border-2 border-violet-800 shadow-md w-full max-w-md rounded-md p-8">
+      <div className="border border-violet-800 shadow-md w-full max-w-md rounded-md p-8">
         <p className="text-2xl font-bold mb-4">Place Order!!</p>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>

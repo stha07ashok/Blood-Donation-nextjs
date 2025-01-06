@@ -1,20 +1,16 @@
 "use client";
+import { loginFormDataProps } from "@/types/login";
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-interface loginFormData {
-  email: string;
-  password: string;
-}
-
-const LoginPage = () => {
+const LoginPage = ({ email, password }: loginFormDataProps) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<loginFormData>();
+  } = useForm<loginFormDataProps>();
 
-  const onSubmit: SubmitHandler<loginFormData> = (data) => {
+  const onSubmit: SubmitHandler<loginFormDataProps> = (data) => {
     console.log(data);
   };
 

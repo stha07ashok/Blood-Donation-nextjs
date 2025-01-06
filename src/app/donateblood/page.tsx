@@ -2,47 +2,26 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import Link from "next/link";
+import { selectBloodBankBranch } from "@/store/selectBloodBankBranch";
+import { RegisterFormDataProps } from "@/types/donateBlood";
 
-const selectBloodBankBranch = [
-  { value: " Kathmandu", label: "Nepal Blood Bank | Kathmandu" },
-  { value: "Pokhara", label: "Nepal Blood Bank | Pokhara" },
-  { value: "Butwal", label: "Nepal Blood Bank | Butwal" },
-  { value: "Chitwan", label: "Nepal Blood Bank | Chitwan" },
-  { value: "Dharan", label: "Nepal Blood Bank | Dharan" },
-  { value: "Biratnagar", label: "Nepal Blood Bank | Biratnagar" },
-  { value: "Nepalgunj", label: "Nepal Blood Bank | Nepalgunj" },
-  { value: " Dhangadi", label: "Nepal Blood Bank | Dhangadi" },
-  { value: "Surkhet", label: "Nepal Blood Bank | Surkhet" },
-  { value: "Janakpur", label: "Nepal Blood Bank | Janakpur" },
-  { value: " Dang", label: "Nepal Blood Bank | Dang" },
-  { value: "Hetauda", label: "Nepal Blood Bank | Hetauda" },
-];
-
-const genderOptions = [
-  { value: "male", label: "Male" },
-  { value: "female", label: "Female" },
-];
-
-interface RegisterFormData {
-  email: string;
-  citizenshipNumber: number;
-  contactNumber: number;
-  address: string;
-  bloodBankBranch: { value: string; label: string };
-  fullName: string;
-  gender: boolean;
-  date: number;
-  time: number;
-}
-
-const RegisterPage = () => {
+const RegisterPage = ({
+  email,
+  citizenshipNumber,
+  contactNumber,
+  address,
+  bloodBankBranch,
+  fullName,
+  gender,
+  date,
+  time,
+}: RegisterFormDataProps) => {
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<RegisterFormData>();
+  } = useForm<RegisterFormDataProps>();
 
   const [isClient, setIsClient] = useState(false);
 
@@ -50,7 +29,7 @@ const RegisterPage = () => {
     setIsClient(true); // Ensure React Select is rendered only on the client
   }, []);
 
-  const onSubmit: SubmitHandler<RegisterFormData> = (data) => {
+  const onSubmit: SubmitHandler<RegisterFormDataProps> = (data) => {
     console.log(data);
   };
 
@@ -186,9 +165,9 @@ const RegisterPage = () => {
               <span className="text-red-600">This field is required!!!</span>
             )}
           </div>
-          <div className="flex flex-row gap-6 w-full">
+          <div className="flex flex-col gap-6 w-full sm:flex-row">
             <div>
-              <label htmlFor="Date&Time" className="block font-medium">
+              <label htmlFor="Date" className="block font-medium">
                 Date:
               </label>
               <input
@@ -197,11 +176,11 @@ const RegisterPage = () => {
                 {...register("date", {
                   required: "Date is required",
                 })}
-                className="w-44 border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
+                className="w-full sm:w-44 border border-violet-800 rounded-md p-2 shadow appearance-none leading-tight focus:outline-none focus:shadow"
               />
             </div>
             <div>
-              <label htmlFor="Date&Time" className="block font-medium">
+              <label htmlFor="time" className="block font-medium">
                 Time:
               </label>
               <input
@@ -210,10 +189,11 @@ const RegisterPage = () => {
                 {...register("time", {
                   required: "Time is required",
                 })}
-                className="w-44 border border-violet-800 rounded-md p-2 text-lg shadow appearance-none leading-tight focus:outline-none focus:shadow"
+                className="w-full sm:w-44 border border-violet-800 rounded-md p-2 text-lg shadow appearance-none leading-tight focus:outline-none focus:shadow"
               />
             </div>
           </div>
+
           {/* Gender Radio Buttons */}
           <div>
             <label className="block font-medium">Gender:</label>

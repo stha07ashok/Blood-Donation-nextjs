@@ -1,7 +1,7 @@
 export interface RegisterFormDataProps {
   email: string;
   password: string;
-  contactNumber: number;
+  contactNumber: string;
   address: string;
   bloodBankBranch: { value: string; label: string };
   gender: boolean;

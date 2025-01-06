@@ -178,7 +178,7 @@ const RegisterPage = ({
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full border-2 border-violet-800 text-black py-2 rounded-md hover:bg-violet-700 hover:text-white transition ease-in-out duration-200"
+            className="w-full border-2 border-violet-800 text-black py-2  dark:text-white rounded-md hover:bg-violet-700 hover:text-white transition ease-in-out duration-200"
           >
             Register
           </button>
@@ -187,7 +187,7 @@ const RegisterPage = ({
           Have an account? Please{" "}
           <Link
             href="/login"
-            className="text-violet-800 hover:text-violet-600 hoverEffect"
+            className="text-violet-800 hover:text-violet-600 hoverEffect dark:text-white"
           >
             Login
           </Link>

@@ -139,10 +139,10 @@ const RegisterPage = ({
                     {...field}
                     options={selectBloodBankBranch}
                     placeholder="Choose a Blood Bank Branch"
-                    className="react-select-container "
+                    className="react-select-container dark:text-white"
                     classNamePrefix="react-select"
                     onChange={(selectedOption) => {
-                      field.onChange(selectedOption); // Pass the entire selected option object
+                      field.onChange(selectedOption);
                     }}
                     value={
                       field.value
@@ -150,11 +150,27 @@ const RegisterPage = ({
                             (option) => option.value === field.value?.value
                           )
                         : null
-                    } // Ensure the selected value is passed back to the Select component
+                    }
                     styles={{
                       control: (base) => ({
                         ...base,
                         borderColor: "rgb(128, 0, 255)", // Custom border color
+                        backgroundColor: "transparent", // Ensure transparent background
+                      }),
+                      menu: (base) => ({
+                        ...base,
+                        backgroundColor: "rgba(0, 0, 0, 0.8)", // Dark mode menu background
+                      }),
+                      option: (base, state) => ({
+                        ...base,
+                        backgroundColor: state.isSelected
+                          ? "rgb(128, 0, 255)"
+                          : "", // Background color for selected option
+                        color: state.isSelected ? "white" : "black", // Text color for selected option
+                        ":hover": {
+                          backgroundColor: "rgb(128, 0, 255)",
+                          color: "white",
+                        },
                       }),
                     }}
                   />
@@ -226,7 +242,7 @@ const RegisterPage = ({
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full border-2 border-violet-800 text-black py-2 rounded-md hover:bg-violet-700 hover:text-white transition ease-in-out duration-200 hoverEffect"
+            className="w-full border-2 dark:text-white border-violet-800 text-black py-2 rounded-md hover:bg-violet-700 hover:text-white transition ease-in-out duration-200 hoverEffect"
           >
             Donate
           </button>

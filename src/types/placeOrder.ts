@@ -2,6 +2,6 @@ export interface placeOrderDataProps {
   email: string;
   address: string;
   bloodtype: string;
-  contactNumber: number;
+  contactNumber: string;
   delivery: string;
 }

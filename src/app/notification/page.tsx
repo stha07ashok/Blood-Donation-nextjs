@@ -18,8 +18,8 @@ const NotificationPage = ({
   time,
 }: notificationTypeProps) => {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-screen-xl mx-auto px-4 py-6">
+    <div className="min-h-screen ">
+      <div className="md:max-w-screen-lg mx-auto px-4 py-6">
         <BloodRequestNotification />
         <BloodCampNotificaton />
       </div>

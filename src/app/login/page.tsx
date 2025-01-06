@@ -55,7 +55,7 @@ const LoginPage = ({ email, password }: loginFormDataProps) => {
             </div>
             <button
               type="submit"
-              className="w-full border-2 border-violet-800 text-black py-2 rounded-md hover:bg-violet-700 hover:text-white transition ease-in-out duration-200"
+              className="w-full border-2 dark:text-white border-violet-800 text-black py-2 rounded-md hover:bg-violet-700 hover:text-white transition ease-in-out duration-200"
             >
               Login
             </button>
@@ -64,7 +64,7 @@ const LoginPage = ({ email, password }: loginFormDataProps) => {
             Haven't an account? Please{" "}
             <Link
               href="/register"
-              className="text-violet-800 hover:text-violet-600"
+              className="text-violet-800 hover:text-violet-600 dark:text-white"
             >
               Register
             </Link>

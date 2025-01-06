@@ -1,6 +1,5 @@
 import Image from "next/image";
-
-const Homeimg = "/bloodHome.png";
+import Homeimg from "../../public/bloodHome.png";
 
 export default function Home() {
   return (

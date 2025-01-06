@@ -12,7 +12,7 @@ const BloodCampNotificaton = () => {
           <h2 className="text-xl md:text-2xl font-bold text-center text-violet-800">
             {item.title}
           </h2>
-          <p className="text-center text-gray-700 text-sm md:text-base">
+          <p className="text-center text-gray-700 text-sm md:text-base dark:text-white">
             {item.description}
           </p>
           <div className="flex flex-wrap justify-between gap-4 mt-4">

@@ -13,17 +13,17 @@ const BloodRequestNotification = () => {
             {item.title}
           </h2>
           <div className=" flex flex-row justify-between ">
-            <p className="font-bold text-xl text-red-600">
+            <p className="font-bold text-xl text-red-600 urgent ">
               {item.requestStatus}
             </p>
-            <p className="font-bold text-xl text-red-600">
+            <p className="font-bold text-xl text-red-600 urgent">
               {item.requestStatus}
             </p>
-            <p className="font-bold text-xl text-red-600">
+            <p className="font-bold text-xl text-red-600 urgent">
               {item.requestStatus}
             </p>
           </div>
-          <p className="text-center text-gray-700 text-sm md:text-base">
+          <p className="text-center text-gray-700 text-sm md:text-base dark:text-white">
             {item.description}
           </p>
           <div className="flex flex-wrap justify-between gap-4 mt-4">

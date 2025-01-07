@@ -31,14 +31,14 @@ const Details = () => {
                 <button
                   type="button"
                   onClick={() => handleViewReport(blood?.bloodReport || "")}
-                  className="px-2 py-2  text-black font-semibold rounded-md hover:bg-violet-600 border-2 border-violet-800 hover:text-white hoverEffect"
+                  className="px-2 py-2  text-black font-semibold rounded-md hover:bg-violet-600 border-2 border-violet-800 hover:text-white hoverEffect dark:text-white"
                 >
                   View Report
                 </button>
                 <Link
                   href="/placeorder"
                   type="button"
-                  className="py-2  px-12 text-black font-semibold rounded-md hover:bg-violet-600 border-2 border-violet-800 hover:text-white hoverEffect"
+                  className="py-2  px-12 text-black font-semibold rounded-md hover:bg-violet-600 border-2 border-violet-800 hover:text-white hoverEffect dark:text-white"
                 >
                   Place Order
                 </Link>

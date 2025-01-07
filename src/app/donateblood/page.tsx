@@ -139,7 +139,7 @@ const RegisterPage = ({
                     {...field}
                     options={selectBloodBankBranch}
                     placeholder="Choose a Blood Bank Branch"
-                    className="react-select-container dark:text-white"
+                    className="react-select-container dark:text-white dark:bg-darkcolor dark:border-white"
                     classNamePrefix="react-select"
                     onChange={(selectedOption) => {
                       field.onChange(selectedOption);
@@ -154,23 +154,20 @@ const RegisterPage = ({
                     styles={{
                       control: (base) => ({
                         ...base,
-                        borderColor: "rgb(128, 0, 255)", // Custom border color
-                        backgroundColor: "transparent", // Ensure transparent background
-                      }),
-                      menu: (base) => ({
-                        ...base,
-                        backgroundColor: "rgba(0, 0, 0, 0.8)", // Dark mode menu background
+                        borderColor: "rgb(128, 0, 255)",
+                        backgroundColor: "transparent", // Ensure background doesn't change
                       }),
                       option: (base, state) => ({
                         ...base,
+                        color:
+                          state.isSelected || state.isFocused
+                            ? "white"
+                            : "black",
                         backgroundColor: state.isSelected
-                          ? "rgb(128, 0, 255)"
-                          : "", // Background color for selected option
-                        color: state.isSelected ? "white" : "black", // Text color for selected option
-                        ":hover": {
-                          backgroundColor: "rgb(128, 0, 255)",
-                          color: "white",
-                        },
+                          ? "rgba(128, 0, 255, 0.2)" // Highlight selected
+                          : state.isFocused
+                          ? "rgba(128, 0, 255, 0.1)" // Highlight focused
+                          : "transparent",
                       }),
                     }}
                   />

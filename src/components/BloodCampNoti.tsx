@@ -9,7 +9,7 @@ const BloodCampNotificaton = () => {
           key={index}
           className=" border border-violet-500 shadow-lg rounded-lg p-4 md:p-6 flex flex-col group"
         >
-          <h2 className="text-xl md:text-2xl font-bold text-center text-violet-800">
+          <h2 className="text-xl md:text-2xl font-bold text-center text-violet-800 dark:text-white">
             {item.title}
           </h2>
           <p className="text-center text-gray-700 text-sm md:text-base dark:text-white">

@@ -37,7 +37,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="border-b border-2 border-b-violet-500 h-25 shadow-md ">
+    <nav className="border-b border-2 border-b-violet-500 h-25 shadow-md dark:border-dark dark:border-b-violet-800 ">
       <div className="container mx-auto flex justify-between gap-4">
         <Link href="/" className="hover">
           <Image

@@ -4,6 +4,7 @@ import Select from "react-select";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { selectBloodBankBranch } from "@/store/selectBloodBankBranch";
 import { RegisterFormDataProps } from "@/types/donateBlood";
+import { useTheme } from "next-themes";
 
 const RegisterPage = ({
   email,
@@ -24,6 +25,7 @@ const RegisterPage = ({
   } = useForm<RegisterFormDataProps>();
 
   const [isClient, setIsClient] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setIsClient(true); // Ensure React Select is rendered only on the client
@@ -139,7 +141,7 @@ const RegisterPage = ({
                     {...field}
                     options={selectBloodBankBranch}
                     placeholder="Choose a Blood Bank Branch"
-                    className="react-select-container dark:text-white dark:bg-darkcolor dark:border-white"
+                    className="react-select-container dark:bg-darkcolor dark:border-white"
                     classNamePrefix="react-select"
                     onChange={(selectedOption) => {
                       field.onChange(selectedOption);
@@ -155,7 +157,7 @@ const RegisterPage = ({
                       control: (base) => ({
                         ...base,
                         borderColor: "rgb(128, 0, 255)",
-                        backgroundColor: "transparent", // Ensure background doesn't change
+                        backgroundColor: "black", // Ensure background doesn't change
                       }),
                       option: (base, state) => ({
                         ...base,

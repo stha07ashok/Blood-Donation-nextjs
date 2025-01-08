@@ -8,8 +8,9 @@ import { usePathname } from "next/navigation";
 import bloodimg from "../../public/blood.png";
 import { donationCampData, notificationData } from "@/store/notification";
 import DarkMode from "./DarkMode";
+import Sidebar from "@/components/Sidebar";
 
-export const navbarData = [
+const navbarData = [
   { title: "Home", href: "/" },
   { title: "Donate Blood", href: "/donateblood" },
   { title: "Available Blood", href: "/bloodavailable" },
@@ -18,7 +19,7 @@ export const navbarData = [
 const calculateNotificationCount = () =>
   notificationData.length + donationCampData.length;
 
-export const Data = [
+const Data = [
   {
     title: "Notification",
     href: "/notification",
@@ -37,9 +38,9 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="border-b border-2 border-b-violet-500 h-25 shadow-md dark:border-dark dark:border-b-violet-800 ">
-      <div className="container mx-auto flex justify-between gap-4">
-        <Link href="/" className="hover">
+    <nav className="border-b border-2 border-b-violet-500 h-25 shadow-md dark:border-dark dark:border-b-violet-800 flex items-center justify-between">
+      <div className="container mx-auto flex items-center justify-between gap-4">
+        <Link href="/" className="hover flex-shrink-0 ml-2 md:ml-4 lg:ml-0">
           <Image
             src={bloodimg}
             alt="Donate Blood"
@@ -68,7 +69,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-4 sm:gap-6 font-extrabold">
+        <div className="hidden md:flex justify-between gap-4 sm:gap-6 font-extrabold">
           <DarkMode />
           {Data.map((item, index) => (
             <div className="relative" key={index}>
@@ -87,6 +88,7 @@ const Navbar = () => {
           ))}
         </div>
       </div>
+      <Sidebar />
     </nav>
   );
 };

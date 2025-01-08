@@ -12,7 +12,7 @@ const BloodRequestNotification = () => {
           <h2 className="text-xl md:text-2xl font-bold text-center text-violet-800 dark:text-white">
             {item.title}
           </h2>
-          <div className=" flex flex-row justify-between ">
+          <div className=" flex flex-row justify-around ">
             <p className="font-bold text-xl text-red-600 urgent ">
               {item.requestStatus}
             </p>

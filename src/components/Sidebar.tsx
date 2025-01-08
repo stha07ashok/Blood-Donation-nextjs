@@ -1,51 +1,23 @@
-import { donationCampData, notificationData } from "@/store/notification";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { FaRegCircleUser } from "react-icons/fa6";
-import { GrNotification } from "react-icons/gr";
 import { TfiEmail } from "react-icons/tfi";
 import DarkMode from "./DarkMode";
-
-const navbarData = [
-  { title: "Home", href: "/" },
-  { title: "Donate Blood", href: "/donateblood" },
-  { title: "Available Blood", href: "/bloodavailable" },
-];
-
-const calculateNotificationCount = () =>
-  notificationData.length + donationCampData.length;
-
-const Data = [
-  {
-    title: "Notification",
-    href: "/notification",
-    icon: <GrNotification className="text-2xl relative" />,
-    notificationCount: calculateNotificationCount(),
-  },
-  {
-    title: "Login",
-    href: "/login",
-    icon: <FaRegCircleUser className="text-2xl" />,
-    notificationCount: 0,
-  },
-];
+import { Data, navbarData } from "@/constants/navBar";
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
 
   return (
     <div>
-      {/* Toggle Button */}
       <div
         onClick={() => setSidebar(!sidebar)}
         className="pr-4 cursor-pointer z-10 text-violet-800 md:hidden flex items-center my-5"
       >
-        {sidebar ? <FaTimes size={30} /> : <FaBars size={30} />}
+        <FaBars size={30} />
       </div>
 
-      {/* Sidebar */}
       {sidebar && (
         <div className="fixed top-0 right-0 w-64 h-screen bg-[#f0f0f0] dark:bg-black dark:text-white shadow-lg text-violet-800 z-20 flex-col py-6">
           {/* Close Icon and Top Icons */}

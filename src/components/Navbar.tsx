@@ -2,37 +2,11 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { FaRegCircleUser } from "react-icons/fa6";
-import { GrNotification } from "react-icons/gr";
 import { usePathname } from "next/navigation";
 import bloodimg from "../../public/blood.png";
-import { donationCampData, notificationData } from "@/store/notification";
 import DarkMode from "./DarkMode";
 import Sidebar from "@/components/Sidebar";
-
-const navbarData = [
-  { title: "Home", href: "/" },
-  { title: "Donate Blood", href: "/donateblood" },
-  { title: "Available Blood", href: "/bloodavailable" },
-];
-
-const calculateNotificationCount = () =>
-  notificationData.length + donationCampData.length;
-
-const Data = [
-  {
-    title: "Notification",
-    href: "/notification",
-    icon: <GrNotification className="text-2xl relative" />,
-    notificationCount: calculateNotificationCount(),
-  },
-  {
-    title: "Login",
-    href: "/login",
-    icon: <FaRegCircleUser className="text-2xl" />,
-    notificationCount: 0,
-  },
-];
+import { Data, navbarData } from "@/constants/navBar";
 
 const Navbar = () => {
   const pathname = usePathname();

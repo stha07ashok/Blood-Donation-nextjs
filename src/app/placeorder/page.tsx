@@ -4,6 +4,7 @@ import Select from "react-select";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { placeOrderDataProps } from "@/types/placeOrder";
 import { bloodType } from "@/store/bloodType";
+import { useTheme } from "next-themes";
 
 const deliveryCharge = 50;
 
@@ -24,6 +25,7 @@ const PlaceOrder = ({
 
   const [isClient, setIsClient] = useState(false);
   const [selectedBloodType, setSelectedBloodType] = useState<any | null>(null);
+  const { theme, setTheme } = useTheme();
 
   const deliveryOption = watch("delivery");
 
@@ -107,7 +109,40 @@ const PlaceOrder = ({
                     styles={{
                       control: (base) => ({
                         ...base,
-                        borderColor: "rgb(128, 0, 255)", // Custom border color
+                        borderColor: "rgb(128, 0, 255)",
+                        backgroundColor: theme === "dark" ? "black" : "white", // Set background based on theme
+                        color: theme === "dark" ? "white" : "black", // Set text color based on theme
+                      }),
+                      singleValue: (base) => ({
+                        ...base,
+                        color: theme === "dark" ? "white" : "black", // Single value text color
+                      }),
+                      menu: (base) => ({
+                        ...base,
+                        backgroundColor: theme === "dark" ? "black" : "white", // Menu background
+                      }),
+                      option: (base, state) => ({
+                        ...base,
+                        color:
+                          theme === "dark"
+                            ? state.isSelected || state.isFocused
+                              ? "white"
+                              : "gray"
+                            : state.isSelected || state.isFocused
+                            ? "black"
+                            : "gray", // Text color based on theme and state
+                        backgroundColor:
+                          theme === "dark"
+                            ? state.isSelected
+                              ? "rgba(128, 0, 255, 0.6)"
+                              : state.isFocused
+                              ? "rgba(128, 0, 255, 0.2)"
+                              : "transparent"
+                            : state.isSelected
+                            ? "rgba(128, 0, 255, 0.2)"
+                            : state.isFocused
+                            ? "rgba(128, 0, 255, 0.1)"
+                            : "transparent", // Background color based on theme and state
                       }),
                     }}
                   />
@@ -170,7 +205,7 @@ const PlaceOrder = ({
             {errors.delivery && (
               <span className="text-red-600">This field is required!!!</span>
             )}
-            {delivery === "yes" && (
+            {deliveryOption === "yes" && (
               <p className="mt-2 text-lg">
                 Delivery Charge:{" "}
                 <span className="font-bold">Rs.{deliveryCharge}</span>

@@ -141,7 +141,7 @@ const RegisterPage = ({
                     {...field}
                     options={selectBloodBankBranch}
                     placeholder="Choose a Blood Bank Branch"
-                    className="react-select-container dark:bg-darkcolor dark:border-white"
+                    className="react-select-container"
                     classNamePrefix="react-select"
                     onChange={(selectedOption) => {
                       field.onChange(selectedOption);
@@ -156,20 +156,40 @@ const RegisterPage = ({
                     styles={{
                       control: (base) => ({
                         ...base,
-                        borderColor: "rgb(128, 0, 255)",
-                        backgroundColor: "black", // Ensure background doesn't change
+                        borderColor: "#6B21A8",
+                        backgroundColor: theme === "dark" ? "black" : "white", // Background color based on theme
+                        color: theme === "dark" ? "white" : "black", // Text color based on theme
+                      }),
+                      singleValue: (base) => ({
+                        ...base,
+                        color: theme === "dark" ? "white" : "black", // Single value text color
+                      }),
+                      menu: (base) => ({
+                        ...base,
+                        backgroundColor: theme === "dark" ? "black" : "white", // Menu background color
                       }),
                       option: (base, state) => ({
                         ...base,
                         color:
-                          state.isSelected || state.isFocused
-                            ? "white"
-                            : "black",
-                        backgroundColor: state.isSelected
-                          ? "rgba(128, 0, 255, 0.2)" // Highlight selected
-                          : state.isFocused
-                          ? "rgba(128, 0, 255, 0.1)" // Highlight focused
-                          : "transparent",
+                          theme === "dark"
+                            ? state.isSelected || state.isFocused
+                              ? "white"
+                              : "gray"
+                            : state.isSelected || state.isFocused
+                            ? "black"
+                            : "gray", // Text color based on theme and state
+                        backgroundColor:
+                          theme === "dark"
+                            ? state.isSelected
+                              ? "rgba(128, 0, 255, 0.6)"
+                              : state.isFocused
+                              ? "rgba(128, 0, 255, 0.2)"
+                              : "transparent"
+                            : state.isSelected
+                            ? "rgba(128, 0, 255, 0.2)"
+                            : state.isFocused
+                            ? "rgba(128, 0, 255, 0.1)"
+                            : "transparent", // Background color based on theme and state
                       }),
                     }}
                   />

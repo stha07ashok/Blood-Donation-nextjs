@@ -5,6 +5,7 @@ import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import Link from "next/link";
 import { selectBloodBankBranch } from "@/store/selectBloodBankBranch";
 import { RegisterFormDataProps } from "@/types/register";
+import { useTheme } from "next-themes";
 
 const RegisterPage = ({
   email,
@@ -23,6 +24,7 @@ const RegisterPage = ({
   } = useForm<RegisterFormDataProps>();
 
   const [isClient, setIsClient] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setIsClient(true);
@@ -135,7 +137,40 @@ const RegisterPage = ({
                     styles={{
                       control: (base) => ({
                         ...base,
-                        borderColor: "rgb(128, 0, 255)", // Custom border color
+                        borderColor: "#6B21A8",
+                        backgroundColor: theme === "dark" ? "black" : "white", // Background color based on theme
+                        color: theme === "dark" ? "white" : "black", // Text color based on theme
+                      }),
+                      singleValue: (base) => ({
+                        ...base,
+                        color: theme === "dark" ? "white" : "black", // Single value text color
+                      }),
+                      menu: (base) => ({
+                        ...base,
+                        backgroundColor: theme === "dark" ? "black" : "white", // Menu background color
+                      }),
+                      option: (base, state) => ({
+                        ...base,
+                        color:
+                          theme === "dark"
+                            ? state.isSelected || state.isFocused
+                              ? "white"
+                              : "gray"
+                            : state.isSelected || state.isFocused
+                            ? "black"
+                            : "gray", // Text color based on theme and state
+                        backgroundColor:
+                          theme === "dark"
+                            ? state.isSelected
+                              ? "rgba(128, 0, 255, 0.6)"
+                              : state.isFocused
+                              ? "rgba(128, 0, 255, 0.2)"
+                              : "transparent"
+                            : state.isSelected
+                            ? "rgba(128, 0, 255, 0.2)"
+                            : state.isFocused
+                            ? "rgba(128, 0, 255, 0.1)"
+                            : "transparent", // Background color based on theme and state
                       }),
                     }}
                   />

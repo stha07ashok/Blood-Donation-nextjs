@@ -7,14 +7,7 @@ import { selectBloodBankBranch } from "@/store/selectBloodBankBranch";
 import { RegisterFormDataProps } from "@/types/register";
 import { useTheme } from "next-themes";
 
-const RegisterPage = ({
-  email,
-  password,
-  contactNumber,
-  address,
-  bloodBankBranch,
-  gender,
-}: RegisterFormDataProps) => {
+const RegisterPage = () => {
   const {
     register,
     handleSubmit,

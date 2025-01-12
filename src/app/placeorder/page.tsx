@@ -8,13 +8,7 @@ import { useTheme } from "next-themes";
 
 const deliveryCharge = 50;
 
-const PlaceOrder = ({
-  email,
-  address,
-  bloodtype,
-  contactNumber,
-  delivery,
-}: placeOrderDataProps) => {
+const PlaceOrder = () => {
   const {
     register,
     handleSubmit,

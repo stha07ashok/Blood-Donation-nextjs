@@ -3,7 +3,7 @@ import { loginFormDataProps } from "@/types/login";
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-const LoginPage = ({ email, password }: loginFormDataProps) => {
+const LoginPage = () => {
   const {
     register,
     handleSubmit,

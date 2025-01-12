@@ -1,48 +1,11 @@
 "use client";
 import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 import { TfiEmail } from "react-icons/tfi";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { icons, quickLinks } from "@/constants/Footer";
 
 const Footer = () => {
-  const quickLinks = [
-    {
-      id: 1,
-      title: "Home",
-      to: "/",
-    },
-    {
-      id: 2,
-      title: "Donate Blood",
-      to: "/donateblood",
-    },
-    {
-      id: 3,
-      title: "Available Blood ",
-      to: "/bloodavailable",
-    },
-  ];
-
-  const icons = [
-    {
-      id: 1,
-      icon: FaFacebook,
-    },
-    {
-      id: 2,
-      icon: FaInstagram,
-    },
-    {
-      id: 3,
-      icon: FaTwitter,
-    },
-    {
-      id: 4,
-      icon: FaLinkedin,
-    },
-  ];
-
   return (
     <footer className="border-t border-1 border-t-violet-800 text-black py-8 px-4 md:px-16 lg:px-24 shadow-md">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">

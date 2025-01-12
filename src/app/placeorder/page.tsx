@@ -19,7 +19,7 @@ const PlaceOrder = () => {
 
   const [isClient, setIsClient] = useState(false);
   const [selectedBloodType, setSelectedBloodType] = useState<any | null>(null);
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
 
   const deliveryOption = watch("delivery");
 

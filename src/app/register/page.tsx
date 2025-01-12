@@ -17,7 +17,7 @@ const RegisterPage = () => {
   } = useForm<RegisterFormDataProps>();
 
   const [isClient, setIsClient] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
 
   useEffect(() => {
     setIsClient(true);

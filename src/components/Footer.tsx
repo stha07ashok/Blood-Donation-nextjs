@@ -16,7 +16,7 @@ const Footer = () => {
           <p className="text-sm sm:text-md md:text-lg dark:text-white">
             This Donate Blood website is platform where you can donate blood and
             find blood. This platform is handled by the Nepal Blood Bank with
-            the motivation of "Save a life. Give Blood"
+            the motivation of &quot;Save a life. Give Blood&quot;
           </p>
         </div>
         <div className="flex flex-col md:items-center">

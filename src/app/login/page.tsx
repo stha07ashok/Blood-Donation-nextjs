@@ -61,7 +61,7 @@ const LoginPage = () => {
             </button>
           </form>
           <p className="align-baseline font-medium mt-4 text-sm">
-            Haven't an account? Please{" "}
+            Haven&apos;t an account? Please{" "}
             <Link
               href="/register"
               className="text-violet-800 hover:text-violet-600 dark:text-white"

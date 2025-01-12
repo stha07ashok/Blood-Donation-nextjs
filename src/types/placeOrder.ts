@@ -4,5 +4,5 @@ export interface placeOrderDataProps {
   bloodtype: string;
   contactNumber: string;
   delivery: string;
-  setSelectedBloodType: any;
+  setSelectedBloodType: string;
 }

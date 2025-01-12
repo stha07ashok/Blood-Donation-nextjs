@@ -5,6 +5,7 @@ import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { placeOrderDataProps } from "@/types/placeOrder";
 import { bloodType } from "@/store/bloodType";
 import { useTheme } from "next-themes";
+import { BloodTypeOption } from "@/types/bloodTypeOption";
 
 const deliveryCharge = 50;
 
@@ -18,7 +19,8 @@ const PlaceOrder = () => {
   } = useForm<placeOrderDataProps>();
 
   const [isClient, setIsClient] = useState(false);
-  const [selectedBloodType, setSelectedBloodType] = useState<any | null>(null);
+  const [selectedBloodType, setSelectedBloodType] =
+    useState<BloodTypeOption | null>(null);
   const { theme } = useTheme();
 
   const deliveryOption = watch("delivery");

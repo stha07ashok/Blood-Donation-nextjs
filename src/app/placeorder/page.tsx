@@ -91,8 +91,10 @@ const PlaceOrder = () => {
                     placeholder="Choose a Blood Type"
                     className="react-select-container"
                     classNamePrefix="react-select"
-                    onChange={(selectedOption: any) => {
-                      field.onChange(selectedOption.value); // Update form value
+                    onChange={(
+                      selectedOption: BloodTypeOption | null
+                    ): void => {
+                      field.onChange(selectedOption?.value); // Update form value
                       setSelectedBloodType(selectedOption); // Update state with selected option
                     }}
                     value={

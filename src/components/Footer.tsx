@@ -41,13 +41,13 @@ const Footer = () => {
 
           <div className="flex space-x-2 md:space-x-4 pb-4">
             {icons.map((icon) => (
-              <a
+              <Link
                 href="/"
                 key={icon.id}
                 className="hover:text-violet-800 dark:text-white"
               >
                 <icon.icon size={18} />
-              </a>
+              </Link>
             ))}
           </div>
 
